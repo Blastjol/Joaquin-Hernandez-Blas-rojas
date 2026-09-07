@@ -36,7 +36,11 @@ Como se comento anteriormente, el error relativo mas alto corresponde al año 20
 
 
 ## A5. Mejor compra y mejor venta.  
-Buscamos el mes mas barato y mas caro del dataset. El mas barato fue en febrero 2023 a 798.26, en cambio, lo mas caro fue en enero 2025 con 1000.76. Usando 2 cifras significativas, osea 
+Buscamos el mes mas barato y mas caro del dataset. El mas barato fue en febrero 2023 a 798.26, en cambio, lo mas caro fue en enero 2025 con 1000.76.
+
+Rentabilidad obtenida: $25.0% \pm 0.37%
+
+Análisis de incertidumbre: Esta conclusión sobrevive holgadamente al error. La ganancia real que genera el mercado (un $25%$ de rendimiento) es inmensamente superior al pequeño error propagado por la incertidumbre de la máquina (solo un $0.37%$). Por lo tanto, la recomendación de comprar en ese mínimo y vender en ese máximo es totalmente sólida y matemáticamente irrefutable, ya que el margen de error jamás podría alcanzar ni opacar semejante diferencia de precio.
 
 
 
