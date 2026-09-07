@@ -11,7 +11,7 @@ Universidad Católica del Maule — Laboratorio Evaluado 1
 
 ## Descripción
 
-Este proyecto analiza cómo el redondeo a pocas cifras significativas (simulando la pérdida de precisión de punto flotante) afecta los cálculos financieros de comprar y vender dólares. Usando el promedio mensual del Dólar Observado del SII (2022-2025), se calcula el error absoluto y relativo de cada precio, se propaga ese error a través de las operaciones de compra, venta y ganancia, y se estudia el efecto de cancelación que ocurre al restar dos meses con precios muy parecidos. El objetivo final es determinar, con respaldo numérico, en qué meses conviene comprar y vender, y en qué casos la diferencia calculada es demasiado incierta como para sacar una conclusión.
+Este proyecto analiza cómo el redondeo a pocas cifras significativas (simulando la pérdida de precisión de punto flotante) afecta los cálculos financieros de comprar y vender dólares. Usando el dataset del Dólar Observado del SII (2022-2025), se calcula el error absoluto y relativo de cada precio, se propaga ese error a través de las operaciones de compra, venta y ganancia, y se estudia el efecto de cancelación que ocurre al restar dos meses con precios muy parecidos. El objetivo final es determinar, con respaldo numérico, en qué meses conviene comprar y vender, y en qué casos la diferencia calculada es demasiado incierta como para sacar una conclusión.
 
 ## Estructura del Repositorio
 
