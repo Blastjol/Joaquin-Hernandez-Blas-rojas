@@ -1,7 +1,7 @@
 # INFORME DEL TRABAJO Y RESPUESTA DE LAS PREGUNTAS 
 **Integrantes:** Blas Emilio Rojas Diaz Y Joaquin Alonso Hernandez Castro
 
-# PREGUNTAS
+## PREGUNTAS
 
 ## A1: Redondea a 2 cifras signifi cativas los precios que vayas a usar. Para cada uno calcula su error absoluto y su error relativo. ¿Qué mes quedó con el mayor error relativo al redondear?
 
@@ -17,7 +17,8 @@ Elige un mes de compra y uno de venta. Con M = 1.000.000 y las tasas aproximadas
 
 
 ##A3. Cancelación (dos meses casi iguales).
-
+Aca comparamos diciembre 2022 contra diciembre 2023, se ocuparon 3 cifras significaticas, por tanto el 875,66 de diciembre 2022 quedo en 876, lo que da un error absoluto de 0,34. Ahora viendo a diciembre 2023, que corresponde a 874,67 este queda en 875, que da un error absoluto de 0,33. Si se restan para poder ver la diferencia de precio, nos da -1, si se suman los 2 errores absolutos nos da 0,67.
+En conclusion el margen error propagado total es de 0.67 tanto para arriba como hacia abajo con una diferencia de -1 peso.
 
 
 
