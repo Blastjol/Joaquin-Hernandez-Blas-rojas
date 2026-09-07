@@ -44,6 +44,9 @@ Análisis de incertidumbre: Esta conclusión sobrevive holgadamente al error. La
 
 
 
+## B1. Cifras significativas = mantisa corta.
+
+
 
 ## B2. La ida y vuelta que no vuelve.
 Idealmente se supone que si tomamos un monto (1000000) y lo transofrmamos dos veces deberiamos llegar al mismo monto, esto no es asi, debido a que siemopre hay una diferencia  
@@ -51,6 +54,7 @@ Idealmente se supone que si tomamos un monto (1000000) y lo transofrmamos dos ve
 Si usamos float64, esa diferencia es casi invisible y microscópica, por lo que las matemáticas inversas funcionan casi perfecto.  
 Pero si obligamos al computador a usar float32, el error se nota harto y la diferencia sube. Esto pasa porque al dividir los precios, la máquina tiene que cortar decimales a la fuerza, y esa "basura" se va acumulando de tal forma que ya no te deja recuperar tu saldo exacto, esto siendo casi aleatorio y no dependiendo del mes de del dolar.   
 
+## B4. Cancelación en la máquina.
 
 
 
