@@ -45,8 +45,7 @@ Análisis de incertidumbre: Esta conclusión sobrevive holgadamente al error. La
 
 
 ### B1. Cifras significativas = mantisa corta
-
-**Por qué equivalen:**  
+ 
 En punto flotante, la mantisa almacena exclusivamente los dígitos significativos de un número, determinando su precisión. Restringir un valor a 2 cifras significativas es el equivalente directo a tener una mantisa con pocos bits: al agotarse el espacio, el sistema se ve obligado a truncar o redondear, perdiendo resolución.
 
 **Cálculo del error con 1000.76 a 3 cifras:**  
@@ -56,13 +55,13 @@ En punto flotante, la mantisa almacena exclusivamente los dígitos significativo
 - Error absoluto: 1000.76 - 1000 = 0.76
 
 
-## B2. La ida y vuelta que no vuelve.
+### B2. La ida y vuelta que no vuelve.
 Idealmente se supone que si tomamos un monto (1000000) y lo transofrmamos dos veces deberiamos llegar al mismo monto, esto no es asi, debido a que siemopre hay una diferencia  
 
 Si usamos float64, esa diferencia es casi invisible y microscópica, por lo que las matemáticas inversas funcionan casi perfecto.  
 Pero si obligamos al computador a usar float32, el error se nota harto y la diferencia sube. Esto pasa porque al dividir los precios, la máquina tiene que cortar decimales a la fuerza, y esa "basura" se va acumulando de tal forma que ya no te deja recuperar tu saldo exacto, esto siendo casi aleatorio y no dependiendo del mes de del dolar.   
 
-## B4. Cancelación en la máquina.
+### B4. Cancelación en la máquina.
 
 Hicimos la resta de 874,67 menos 875,66 directamente en Python para ver qué pasaba. Usando datos de 64 bits nos da -0.9900000000000091. Logra guardar como 14 cifras buenas. Pero si lo forzamos a 32 bits, nos da -0.989990234375, En float64, la mantisa más larga nos permite conservar cerca de 15 a 17 cifras significativas, arrastrando consigo mismo una basura al final. En float32, la memoria es mucho más corta unos 7 bits de precision (la mitad del otro). Como restamos dos números casi iguales, los bits importantes se cancelan entre sí y la máquina se ve obligada a rellenar el espacio restante con ceros o números inexactos, dejándonos con apenas 4 o 5 cifras significativas realmente válidas.  
 
