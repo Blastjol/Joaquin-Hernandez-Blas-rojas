@@ -40,7 +40,7 @@ Buscamos el mes mas barato y mas caro del dataset. El mas barato fue en febrero 
 
 Rentabilidad obtenida: 25.0% ± 0.37%
 
-Análisis de incertidumbre: Esta conclusión sobrevive holgadamente al error. La ganancia real que genera el mercado (un $25%$ de rendimiento) es inmensamente superior al pequeño error propagado por la incertidumbre de la máquina (solo un $0.37%$). Por lo tanto, la recomendación de comprar en ese mínimo y vender en ese máximo es totalmente sólida y matemáticamente irrefutable, ya que el margen de error jamás podría alcanzar ni opacar semejante diferencia de precio.
+Análisis de incertidumbre: Esta conclusión sobrevive holgadamente al error. La ganancia real que genera el mercado (un 25% de rendimiento) es inmensamente superior al pequeño error propagado por la incertidumbre de la máquina (solo un 0.37%). Por lo tanto, la recomendación de comprar en ese mínimo y vender en ese máximo es totalmente sólida y matemáticamente irrefutable, ya que el margen de error jamás podría alcanzar ni opacar semejante diferencia de precio.
 
 
 
