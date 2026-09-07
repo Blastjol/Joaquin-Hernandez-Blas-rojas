@@ -69,6 +69,25 @@ Hicimos la resta de 874,67 menos 875,66 directamente en Python para ver qué pas
 
 Su relacion con A3 es que va literal de la mano, ya que es el mismo ejemplo de restar dos numeros casi exactos teniendo una perdida de datos de bits haciendo que la diferencia real sea tan chica que se ve opacada por los redondeos de la maquina.  
 
+## CONCLUSION
+
+Al realizar este laboratorio hemos aprendido que los errores no son solamente numericos, sino factores que aunque sean invisbles, interfieren el como se manejan las interpretacions de los datos (redondeo, propagación y cancelación)
+
+### 1 
+Conviene comprar en Febrero de 2023, mes en el que el dólar registró su valor mínimo absoluto en todo el período con $798.26 CLP (aproximado a $800$ CLP con un error absoluto de $1.74$ CLP). Este mínimo es completamente seguro frente a sus meses vecinos (como Enero de 2023 con $826.34$ CLP o Marzo de 2023 con $809.50$ CLP). La diferencia de precio con los meses contiguos supera con creces el margen de error de representación, por lo que no cae dentro de la zona de incertidumbre.
+
+### 2
+Conviene vender en Enero de 2025, mes que marcó el máximo absoluto del período con $1.000.76 CLP (aproximado a $1.000$ CLP con un error absoluto de $0.76$ CLP). Al compararlo con el mes anterior (Diciembre de 2024 con $982.30$ CLP), la diferencia de más de $18 pesos supera con creces los errores de redondeo, confirmando que este máximo es seguro para la toma de decisiones.
+
+### 3
+Comprar en Febrero de 2023 y vender en Enero de 2025, si, lo recomendamos totalmente, ya que la ganancia real 25% es superior al error (0.37%).
+
+### 4
+No se recomienda operar entre Diciembre de 2022 ($875.66$ CLP) y Diciembre de 2023 ($874.67$ CLP), es decir todo 2023. En este período, la variación real es de apenas -0.99$ CLP, pero al evaluar el error, la incertidumbre alcanza los +-0.67 CLP, arrojando un error relativo del 67%. Confirmando la irresponsabilidad de comprar y/o vender dolar en este periodo.
+
+### 5
+Aprendimos que no podemos confiar a ciegas al restar dos números prácticamente idénticos, ya que la pérdida de datos por cancelación numérica interfiere de forma directa en la toma de decisiones, acumulando errores que terminan distorsionando por completo los cálculos
+
 
 
 
