@@ -22,3 +22,14 @@ def variacion_anual(anios, meses_num, precios, cifras=CIFRAS_SIGNIFICATIVAS):
 
     resultados.sort(key=lambda r: r["er_delta_pct"])
     return resultados
+
+
+if __name__ == "__main__":
+    anios, meses_num, nombres_mes, precios = cargar_serie()
+    resultados = variacion_anual(anios, meses_num, precios)
+
+    print(f"{'Año':<6}{'Ene->Dic (aprox)':<20}{'Δ±Ea':<20}{'Er %':<10}{'Confiable'}")
+    for r in resultados:
+        delta_str = f"{r['delta_aprox']:.1f} ± {r['ea_delta']:.2f}"
+        print(f"{r['anio']:<6}{r['p_inicial_aprox']:.0f}->{r['p_final_aprox']:.0f}{'':<6}"
+              f"{delta_str:<20}{r['er_delta_pct']:<10.1f}{r['signo_confiable']}")
