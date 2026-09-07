@@ -49,3 +49,9 @@ python src/punto_flotante.py
 ```
 
 Los resultados (gráficos y tablas) quedan guardados en `graficos/`.
+
+
+Resultados y conclusión
+
+Ver [`INFORME.md`](./INFORME.md) para el detalle de cada pregunta (A1-A5,
+B1-B4) y la conclusión final sobre cuándo conviene comprar y vender dólares.
