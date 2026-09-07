@@ -36,7 +36,7 @@ Como se comento anteriormente, el error relativo mas alto corresponde al año 20
 
 
 ## A5. Mejor compra y mejor venta.  
-Buscamos el mes mas barato y mas caro del dataset. El mas barato fue en febrero 2023 a 798.26, en cambio, lo mas caro fue en enero 2025 con 1000.76
+Buscamos el mes mas barato y mas caro del dataset. El mas barato fue en febrero 2023 a 798.26, en cambio, lo mas caro fue en enero 2025 con 1000.76. Usando 2 cifras significativas, osea 
 
 
 
@@ -45,7 +45,7 @@ Buscamos el mes mas barato y mas caro del dataset. El mas barato fue en febrero 
 Idealmente se supone que si tomamos un monto (1000000) y lo transofrmamos dos veces deberiamos llegar al mismo monto, esto no es asi, debido a que siemopre hay una diferencia  
 
 Si usamos float64, esa diferencia es casi invisible y microscópica, por lo que las matemáticas inversas funcionan casi perfecto.  
-Pero si obligamos al computador a usar float32, el error se nota harto y la diferencia sube. Esto pasa porque al dividir los precios, la máquina tiene que cortar decimales a la fuerza, y esa "basura" se va acumulando de tal forma que ya no te deja recuperar tu saldo exacto.  
+Pero si obligamos al computador a usar float32, el error se nota harto y la diferencia sube. Esto pasa porque al dividir los precios, la máquina tiene que cortar decimales a la fuerza, y esa "basura" se va acumulando de tal forma que ya no te deja recuperar tu saldo exacto, esto siendo casi aleatorio y no dependiendo del mes de del dolar.   
 
 
 
