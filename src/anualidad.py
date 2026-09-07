@@ -1,8 +1,14 @@
+#JOAQUIN HERNANDEZ Y BLAS ROJAS
+#calculamos para cada año la variacion de diciembre a enero con su respectivo error propagado, se ordena de años mas confiables a menos confiables.
+#se responde pregunta A4.
+
 import numpy as np
 from cargar_datos import cargar_serie
 from errores import evaluar_variacion
 
 CIFRAS_SIGNIFICATIVAS = 2  # norma general de la seccion 4 del enunciado
+
+
 def variacion_anual(anios, meses_num, precios, cifras=CIFRAS_SIGNIFICATIVAS):
     # obtenemos los años unicos y ordenados
     anios_unicos = sorted(set(anios.tolist()))
