@@ -1,7 +1,7 @@
 # INFORME DEL TRABAJO Y RESPUESTA DE LAS PREGUNTAS 
 **Integrantes:**   
-Blas Emilio Rojas Diaz  
-Joaquin Alonso Hernandez Castro
+- Blas Emilio Rojas Diaz  
+- Joaquin Alonso Hernandez Castro
 
 ## PREGUNTAS
 
