@@ -182,11 +182,39 @@ if __name__ == "__main__":
     plt.savefig(os.path.join(dir_graficos, "4_rentabilidad_desde_minimo.png"), dpi=140)
     plt.close()
 
-    # CSV de evaluación (Evaluación A3 a 3 cifras como exige el PDF)
+    # CSV de evaluación (Evaluación A3 a 3 cifras)
     ruta_csv = os.path.join(dir_graficos, "evaluacion_errores.csv")
     with open(ruta_csv, "w", encoding="utf-8") as f:
-        f.write("tipo,periodo,valor_real,valor_aprox,error_absoluto,error_relativo_pct\n")
-        # Evaluación de cancelación (Pregunta A3)
+        f.write("tipo,periodo_inicial,periodo_final,valor_real,valor_aprox,error_absoluto,error_relativo_pct,signo_confiable\n")
+        
+        def _fmt(x):
+            if isinstance(x, bool): return str(x)
+            if not np.isfinite(x): return "inf"
+            return f"{float(x):.2f}"
+            
+        # 1. A3 (cancelacion Dic-22 vs Dic-23 a 3 cifras)
         r_a3 = evaluar_variacion(875.66, 874.67, cifras=3)
-        f.write(f"cancelacion_a3,Dic-22_Dic-23,{r_a3['delta_real']:.2f},{r_a3['delta_aprox']:.2f},{r_a3['ea_delta']:.2f},{r_a3['er_delta_pct']:.2f}\n")
-    print("Gráficos 2, 3, 4 y tabla de evaluación generados exitosamente.")
+        f.write(f"cancelacion_a3,Dic-22,Dic-23,{_fmt(r_a3['delta_real'])},{_fmt(r_a3['delta_aprox'])},{_fmt(r_a3['ea_delta'])},{_fmt(r_a3['er_delta_pct'])},{_fmt(r_a3['signo_confiable'])}\n")
+
+        # 2. Representación mensual (a 2 cifras)
+        r_mensual = resumen_representacion(precios, cifras)
+        for i in range(len(precios)):
+            f.write(f"representacion_mensual,{etiquetas[i]},,{_fmt(precios[i])},{_fmt(r_mensual['aproximado'][i])},{_fmt(r_mensual['error_absoluto'][i])},{_fmt(r_mensual['error_relativo_pct'][i])},\n")
+
+        # 3. Variación mes a mes
+        for i in range(1, len(precios)):
+            r_var = evaluar_variacion(precios[i - 1], precios[i], cifras)
+            f.write(f"variacion_mes_a_mes,{etiquetas[i - 1]},{etiquetas[i]},{_fmt(r_var['delta_real'])},{_fmt(r_var['delta_aprox'])},{_fmt(r_var['ea_delta'])},{_fmt(r_var['er_delta_pct'])},{_fmt(r_var['signo_confiable'])}\n")
+            
+        # 4. Variación anual (Enero a Diciembre de cada año)
+        anios_unicos = sorted(set(anios.tolist()))
+        for anio in anios_unicos:
+            mask = anios == anio
+            precios_anio = precios[mask]
+            meses_anio = meses_num[mask]
+            precio_enero = float(precios_anio[meses_anio == 1][0])
+            precio_diciembre = float(precios_anio[meses_anio == 12][0])
+            r_anio = evaluar_variacion(precio_enero, precio_diciembre, cifras)
+            f.write(f"variacion_anual,Ene-{str(anio)[2:]},Dic-{str(anio)[2:]},{_fmt(r_anio['delta_real'])},{_fmt(r_anio['delta_aprox'])},{_fmt(r_anio['ea_delta'])},{_fmt(r_anio['er_delta_pct'])},{_fmt(r_anio['signo_confiable'])}\n")
+            
+    print("Gráficos 2, 3, 4 y tabla de evaluación (completa) generados exitosamente.")
