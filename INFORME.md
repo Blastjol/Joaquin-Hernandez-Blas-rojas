@@ -44,8 +44,16 @@ Análisis de incertidumbre: Esta conclusión sobrevive holgadamente al error. La
 
 
 
-## B1. Cifras significativas = mantisa corta.
+### B1. Cifras significativas = mantisa corta
 
+**Por qué equivalen:**  
+En punto flotante, la mantisa almacena exclusivamente los dígitos significativos de un número, determinando su precisión. Restringir un valor a 2 cifras significativas es el equivalente directo a tener una mantisa con pocos bits: al agotarse el espacio, el sistema se ve obligado a truncar o redondear, perdiendo resolución.
+
+**Cálculo del error con 1000.76 a 3 cifras:**  
+- **Valor real:** $1000.76$ (o $1.00076 \times 10^3$)  
+- **Valor almacenado (3 cifras):** $1.00 \times 10^3$ (equivale a $1000$)  
+- **Error de representación:** $|\text{Valor Real} - \text{Valor Almacenado}|$  
+- **Error absoluto:** $1000.76 - 1000 = 0.76$
 
 
 ## B2. La ida y vuelta que no vuelve.
