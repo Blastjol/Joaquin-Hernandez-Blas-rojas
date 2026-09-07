@@ -1,7 +1,5 @@
 # INFORME DEL TRABAJO Y RESPUESTA DE LAS PREGUNTAS 
-** Integrantes: **
-    -Joaquin Hernandez
-    -Blas Rojas
+**Integrantes:** Blas Emilio Rojas Diaz Y Joaquin Alonso Hernandez Castro
 
 # PREGUNTAS
 
