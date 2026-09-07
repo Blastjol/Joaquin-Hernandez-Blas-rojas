@@ -2,6 +2,9 @@
 #funciones de error vectorizadas con numpy, redondeamos 2 cifras significativas para todo, como pide el enunciado.
 
 import numpy as np
+import os
+import matplotlib.pyplot as plt
+from cargar_datos import cargar_serie, etiquetas_periodo
 
 
 def redondear_cifras_significativas(valor, cifras=2):
@@ -125,6 +128,65 @@ def evaluar_variacion(p_inicial_real, p_final_real, cifras=2):
 
 
 if __name__ == "__main__":
-    # Sanity check con el ejemplo del enunciado
-    print("963.44 a 2 cifras ->", redondear_cifras_significativas(963.44, 2))   # 960
-    print("1000.76 a 3 cifras ->", redondear_cifras_significativas(1000.76, 3))  # 1000
+    print("963.44 a 2 cifras ->", redondear_cifras_significativas(963.44, 2))
+    print("1000.76 a 3 cifras ->", redondear_cifras_significativas(1000.76, 3))
+    
+    # Cargar datos para graficar
+    anios, meses_num, nombres_mes, precios = cargar_serie()
+    etiquetas = etiquetas_periodo(anios, meses_num)
+    dir_graficos = os.path.join(os.path.dirname(__file__), "..", "graficos")
+    os.makedirs(dir_graficos, exist_ok=True)
+    cifras = 2
+    monto = 1_000_000.0
+
+    # Gráfico 2: Variación mes a mes
+    delta = np.diff(precios)
+    r_ini = resumen_representacion(precios[:-1], cifras)
+    r_fin = resumen_representacion(precios[1:], cifras)
+    ea_delta = r_ini["error_absoluto"] + r_fin["error_absoluto"]
+    colores = np.where(np.abs(delta) <= ea_delta, "#7a0808", "#41c541")
+    plt.figure(figsize=(10, 5))
+    plt.bar(etiquetas[1:], delta, color=colores)
+    plt.errorbar(etiquetas[1:], delta, yerr=ea_delta, fmt="none", ecolor="black", elinewidth=0.8, capsize=2)
+    plt.axhline(0, color="grey", linewidth=0.8)
+    plt.xticks(rotation=90, fontsize=7)
+    plt.title("Variación mes a mes — rojo: |Variacion| <= error propagado (cancelación)")
+    plt.tight_layout()
+    plt.savefig(os.path.join(dir_graficos, "2_variacion_mensual.png"), dpi=140)
+    plt.close()
+
+    # Gráfico 3: Error de representación
+    r3 = resumen_representacion(precios, cifras)
+    plt.figure(figsize=(10, 5))
+    plt.bar(etiquetas, r3["error_relativo_pct"], color="#452c5c")
+    plt.xticks(rotation=90, fontsize=7)
+    plt.title("Error de representación mensual a 2 cifras")
+    plt.tight_layout()
+    plt.savefig(os.path.join(dir_graficos, "3_error_representacion.png"), dpi=140)
+    plt.close()
+
+    # Gráfico 4: Rentabilidad
+    i_min = int(np.argmin(precios))
+    rentabilidades, errores_rent = [], []
+    for j in range(i_min + 1, len(precios)):
+        r = evaluar_operacion_compra_venta(monto, precios[i_min], precios[j], cifras)
+        rentabilidades.append(r["rentabilidad_pct"])
+        errores_rent.append(r["ea_rentabilidad_pct"] if np.isfinite(r["ea_rentabilidad_pct"]) else 0.0)
+    plt.figure(figsize=(10, 5))
+    plt.bar(etiquetas[i_min + 1:], rentabilidades, color="#31708d")
+    plt.errorbar(etiquetas[i_min + 1:], rentabilidades, yerr=errores_rent, fmt="none", ecolor="black", elinewidth=0.8, capsize=2)
+    plt.axhline(0, color="grey", linewidth=0.8)
+    plt.xticks(rotation=90, fontsize=7)
+    plt.title(f"Rentabilidad de comprar en el mínimo ({etiquetas[i_min]}) y vender después")
+    plt.tight_layout()
+    plt.savefig(os.path.join(dir_graficos, "4_rentabilidad_desde_minimo.png"), dpi=140)
+    plt.close()
+
+    # CSV de evaluación (Evaluación A3 a 3 cifras como exige el PDF)
+    ruta_csv = os.path.join(dir_graficos, "evaluacion_errores.csv")
+    with open(ruta_csv, "w", encoding="utf-8") as f:
+        f.write("tipo,periodo,valor_real,valor_aprox,error_absoluto,error_relativo_pct\n")
+        # Evaluación de cancelación (Pregunta A3)
+        r_a3 = evaluar_variacion(875.66, 874.67, cifras=3)
+        f.write(f"cancelacion_a3,Dic-22_Dic-23,{r_a3['delta_real']:.2f},{r_a3['delta_aprox']:.2f},{r_a3['ea_delta']:.2f},{r_a3['er_delta_pct']:.2f}\n")
+    print("Gráficos 2, 3, 4 y tabla de evaluación generados exitosamente.")
