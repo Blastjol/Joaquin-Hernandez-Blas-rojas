@@ -42,8 +42,6 @@ Buscamos el mes mas barato y mas caro del dataset. El mas barato fue en febrero 
 
 
 ## B2. La ida y vuelta que no vuelve.
-Toma Monto en pesos chilenos, cómpralos a dólares con el precio de un mes y vuélvelos a pesos con el mismo precio. Deberías recuperar Monto exacto. Repite el ciclo los diferentes precios del dolar y mide si esto siguen el mismo patron de movimiento de la curva que forman en el tiempo. Crear grafico  
-
 Idealmente se supone que si tomamos un monto (1000000) y lo transofrmamos dos veces deberiamos llegar al mismo monto, esto no es asi, debido a que siemopre hay una diferencia  
 
 Si usamos float64, esa diferencia es casi invisible y microscópica, por lo que las matemáticas inversas funcionan casi perfecto.  
