@@ -56,7 +56,9 @@ Pero si obligamos al computador a usar float32, el error se nota harto y la dife
 
 ## B4. Cancelación en la máquina.
 
+Hicimos la resta de 874,67 menos 875,66 directamente en Python para ver qué pasaba. Usando datos de 64 bits nos da -0.9900000000000091. Logra guardar como 14 cifras buenas. Pero si lo forzamos a 32 bits, nos da -0.989990234375, En float64, la mantisa más larga nos permite conservar cerca de 15 a 17 cifras significativas, arrastrando consigo mismo una basura al final. En float32, la memoria es mucho más corta unos 7 bits de precision (la mitad del otro). Como restamos dos números casi iguales, los bits importantes se cancelan entre sí y la máquina se ve obligada a rellenar el espacio restante con ceros o números inexactos, dejándonos con apenas 4 o 5 cifras significativas realmente válidas.  
 
+Su relacion con A3 es que va literal de la mano, ya que es el mismo ejemplo de restar dos numeros casi exactos teniendo una perdida de datos de bits haciendo que la diferencia real sea tan chica que se ve opacada por los redondeos de la maquina.  
 
 
 
