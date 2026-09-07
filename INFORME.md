@@ -3,7 +3,7 @@
 - Blas Emilio Rojas Diaz  
 - Joaquin Alonso Hernandez Castro
 
-## PREGUNTAS
+## PREGUNTAS ERROR A CONTESTAR
 
 ### A1: Redondea a 2 cifras signifi cativas los precios que vayas a usar. Para cada uno calcula su error absoluto y su error relativo. ¿Qué mes quedó con el mayor error relativo al redondear?
 
@@ -45,7 +45,7 @@ Rentabilidad obtenida: 25.0% ± 0.37%
 Análisis de incertidumbre: Esta conclusión sobrevive holgadamente al error. La ganancia real que genera el mercado (un 25% de rendimiento) es inmensamente superior al pequeño error propagado por la incertidumbre de la máquina (solo un 0.37%). Por lo tanto, la recomendación de comprar en ese mínimo y vender en ese máximo es totalmente sólida y matemáticamente irrefutable, ya que el margen de error jamás podría alcanzar ni opacar semejante diferencia de precio.
 
 
-
+## PREGUNTAS PUNTO FLOTANTE
 ### B1. Cifras significativas = mantisa corta
  
 En punto flotante, la mantisa almacena exclusivamente los dígitos significativos de un número, determinando su precisión. Restringir un valor a 2 cifras significativas es el equivalente directo a tener una mantisa con pocos bits: al agotarse el espacio, el sistema se ve obligado a truncar o redondear, perdiendo resolución.
