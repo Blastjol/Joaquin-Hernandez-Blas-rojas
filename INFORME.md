@@ -1,5 +1,5 @@
 # INFORME DEL TRABAJO Y RESPUESTA DE LAS PREGUNTAS 
-** Integrantes: 
+** Integrantes: **
     -Joaquin Hernandez
     -Blas Rojas
 
