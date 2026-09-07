@@ -25,8 +25,8 @@ En conclusion el margen error propagado total es de 0.67 tanto para arriba como 
 
 
 ## A4. Anualidad (variación enero→diciembre).
-Aca se calculo la diferencia de enero y didciembre de cada año con 2 cifras significativas y se ordenaron del menor error porcentual al mayor error porcentual.
-En 2025 el precio cayo con 80 con un error de 4.60, tuvo error relativo de 5.8
+Aca se calculo la diferencia de enero y diciembre de cada año con 2 cifras significativas y se ordenaron del menor error porcentual al mayor error porcentual.  
+En 2025 el precio cayo con 80 con un error de 4.60, tuvo error relativo de 5.8  
 En 2024 el precio subió con 70 pesos con un error de 4.31, tuvo un error relativo de 6.2  
 En 2023 el precio subió con 40 pesos con un error de 8.33, tuvo un error relativo de 20.8  
 En 2022 el precio subió con 60 pesos con un error de 6.39, tuvo un error relativo de 10.6  
