@@ -15,14 +15,14 @@ Este proyecto analiza cómo el redondeo a pocas cifras significativas (simulando
 ```
 problema2-dolar-sii/
 ├── README.md
-├── INFORME.md                             <- Respuestas A1-A5, B1-B4
-├── requirements.txt                       <- numpy, matplotlib
+├── INFORME.md                             <- Respuestas A1-A5, B1-B4 y análisis final
+├── requirements.txt                       <- numpy, matplotlib (dependencias)
 ├── data/
-│   └── dolar_observado_sii_2022_2025.csv
+│   └── dolar_observado_sii_2022_2025.csv <- dataset oficial del SII
 ├── src/
-│   ├── cargar_datos.py                    <- Carga el CSV con numpy
-│   ├── errores.py                         <- Redondeo, error absoluto, relativo y propagación
-│   ├── anualidad.py                       <- Variación interanual y su error
+│   ├── cargar_datos.py                    <- carga el CSV con numpy
+│   ├── errores.py                         <- respuestas A y generador de graficos
+│   ├── anualidad.py                       <- Variación y su error de enero a diciembre
 │   └── punto_flotante.py                  <- Deriva numérica float32 vs float64
 └── graficos/                              <- PNG generados y tabla de errores
     └── evaluacion_errores.csv
