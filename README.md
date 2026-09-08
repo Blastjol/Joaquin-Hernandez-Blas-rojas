@@ -1,8 +1,5 @@
-# La ganancia que se evapora
+# Laboratorio 1 - Computación Numérica (UCM)
 
-Cancelación y propagación del error con el Dólar Observado del SII (2022–2025)
-
-Universidad Católica del Maule — Laboratorio Evaluado 1
 
 ## Autores
 
