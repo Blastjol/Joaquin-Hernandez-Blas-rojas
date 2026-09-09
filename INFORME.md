@@ -4,7 +4,6 @@
 - Joaquin Alonso Hernandez Castro
 
 ## PREGUNTAS ERROR A CONTESTAR
-
 ### A1: Redondea a 2 cifras signifi cativas los precios que vayas a usar. Para cada uno calcula su error absoluto y su error relativo. ¿Qué mes quedó con el mayor error relativo al redondear?
 
 El mes que queda con el mayor error relativo al redondear es abril de 2022, 
